@@ -1,0 +1,155 @@
+
+<!-- Created by Petar Katić: https://github.com/bratpeki -->
+
+<!DOCTYPE html>
+<html lang="en_US">
+
+	<style>
+
+		* {
+			margin: 0; padding: 0;
+			font-family: monospace; font-size: 16px;
+			color: #c6c6c6;
+		}
+
+		a { color: #fff; }
+		body { background: #000;}
+		div, input { background: #222; padding: 16px; }
+
+		button {
+			border: none;
+			background: #111;
+			outline: none;
+			padding: 6px;
+			width: 160px;
+			height: 40px;
+			transition-duration: 300ms;
+		}
+
+		button:hover {
+			background: #000;
+		}
+
+		input {
+			border-style: none;
+			outline: none;
+			width: 572px;
+			height: 22px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse:separate;
+			border-spacing: 16px;
+		}
+
+		td { width: 25%; vertical-align: top; text-align: left; }
+		tr { height: 50%; }
+
+		div.logon-time { width: 238px; height: 38px; text-align: left; }
+		div.search-opts { width: 684px; height: 40px; }
+		div.href-container { width: 656px; height: 240px; }
+
+		div.master {
+			background: none;
+			height: 528px;
+			width: 720px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -264px 0 0 -360px;
+		}
+
+	</style>
+
+	<head>
+		<meta charset="utf-8">
+		<title> Startpage - TrueDark </title>
+	</head>
+
+	<body>
+
+		<div class="master"> <center>
+
+			<div class="logon-time">
+				Logon time: <span id="time"></span> <br>
+				Logon date: <span id="date"></span> <br>
+			</div>
+
+			<br>
+
+			<input type="text" id="searchterm" placeholder="Search for something!"><br>
+
+			<br>
+
+			<div class="search-opts">
+				<button onclick="ddg()"> DuckDuckGo </button>
+				<button onclick="eco()"> Ecosia </button>
+				<button onclick="ggl()"> Google </button>
+				<button onclick="srx()"> SearX </button>
+			</div>
+
+			<br>
+
+			<div class="href-container">
+				<table>
+					<tr>
+						<td>
+							4Chan: <br>
+							<a href="https://boards.4channel.org/g/">/g/ - Technology</a><br>
+							<a href="https://boards.4channel.org/mu/">/mu/ - Music</a><br>
+							<a href="https://boards.4chan.org/wg/">/wg/ - Wallpapers/General</a><br>
+							<a href="https://boards.4chan.org/ck/">/ck/ - Food & Cooking</a><br>
+						</td>
+						<td>
+							Reddit: <br>
+							<a href="https://www.reddit.com/r/bonehurtingjuice/">r/bonehurtingjuice</a><br>
+							<a href="https://www.reddit.com/r/godot/">r/godot</a><br>
+							<a href="https://www.reddit.com/r/vim/">r/vim</a><br>
+							<a href="https://www.reddit.com/user/bratpeki">Profile</a><br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Social: <br>
+							<a href="https://discord.com/app">Discord</a><br>
+							<a href="https://www.instagram.com/">Instagram</a><br>
+							<a href="https://www.linkedin.com/">LinkedIn</a><br>
+							<a href="https://www.youtube.com/">YouTube</a><br>
+						</td>
+						<td>
+							Coding: <br>
+							<a href="https://github.com/">GitHub</a><br>
+							<a href="https://stackoverflow.com/">StackOverflow</a><br>
+							<a href="https://www.w3schools.com/">W3Schools</a><br>
+							<a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+		</center></div>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var dt = new Date();
+		document.getElementById("time").innerHTML = ("0" + dt.getHours()).slice(-2) + ":" + ("0" + dt.getMinutes()).slice(-2) + ":" + ("0" + dt.getSeconds()).slice(-2) + "." + ("00" + dt.getMilliseconds()).slice(-3);
+		document.getElementById("date").innerHTML = ("0" + dt.getDate()).slice(-2) + "/" + ("0" + (dt.getMonth()+1)).slice(-2) + "/" + dt.getFullYear();
+
+		function searchUp( baseLink, searchLink ) {
+			var el = document.getElementById("searchterm").value;
+			if (el.length == 0) { window.location = baseLink; }
+			else { window.location = searchLink + el; }
+		}
+
+		function ddg() { searchUp( "https://duckduckgo.com/", "https://duckduckgo.com/?q=" ); }
+		function eco() { searchUp( "https://www.ecosia.org/", "https://www.ecosia.org/search?q=" ); }
+		function ggl() { searchUp( "https://www.google.com/", "https://www.google.com/search?q=" ); }
+		function srx() { searchUp( "https://searx.be/", "https://searx.be/?q=" ); }
+
+	</script>
+
+</html>
+
