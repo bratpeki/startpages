@@ -1,5 +1,9 @@
 
-<!-- Created by Petar Katić: https://github.com/bratpeki -->
+<!--
+	Author: Petar Katić (https://github.com/bratpeki)
+	Description: Startpage inspired by my Vim colorscheme, truedark-vim (https://github.com/bratpeki/truedark-vim)
+	Name: TrueDark
+-->
 
 <!DOCTYPE html>
 <html lang="en_US">
@@ -7,23 +11,23 @@
 	<style>
 
 		* {
-			margin: 0; padding: 0;
-			font-family: monospace; font-size: 16px;
 			color: #c6c6c6;
+			font-family: monospace; font-size: 16px;
+			margin: 0; padding: 0;
 		}
 
 		a { color: #fff; }
 		body { background: #000;}
-		div, input { background: #222; padding: 16px; }
+		div, input { background: #222; display: table-cell; padding: 16px; vertical-align: middle; }
 
 		button {
-			border: none;
 			background: #111;
+			border: none;
+			height: 40px;
 			outline: none;
 			padding: 6px;
-			width: 160px;
-			height: 40px;
 			transition-duration: 300ms;
+			width: 160px;
 		}
 
 		button:hover {
@@ -32,32 +36,32 @@
 
 		input {
 			border-style: none;
+			height: 22px;
 			outline: none;
 			width: 684px;
-			height: 22px;
 		}
 
 		table {
-			width: 100%;
 			border-collapse:separate;
 			border-spacing: 16px;
+			width: 100%;
 		}
 
-		td { width: 25%; vertical-align: top; text-align: left; }
+		td { text-align: left; vertical-align: top; width: 25%; }
 		tr { height: 50%; }
 
-		div.logon-time { width: 238px; height: 38px; text-align: left; }
-		div.search-opts { width: 684px; height: 40px; }
-		div.href-container { width: 684px; height: 240px; }
+		div.logon-time { height: 38px; text-align: left; width: 238px; }
+		div.search-opts { height: 40px; width: 684px; }
+		div.href-container { height: 240px; width: 684px; }
 
 		div.master {
 			background: none;
 			height: 528px;
-			width: 720px;
-			position: absolute;
-			top: 50%;
 			left: 50%;
 			margin: -264px 0 0 -360px;
+			position: absolute;
+			top: 50%;
+			width: 720px;
 		}
 
 	</style>
@@ -69,66 +73,68 @@
 
 	<body>
 
-		<div class="master"> <center>
+		<div class="master">
+			<center>
 
-			<div class="logon-time">
-				Logon time: <span id="time"></span> <br>
-				Logon date: <span id="date"></span> <br>
-			</div>
+				<div class="logon-time">
+					Logon time: <span id="time"></span> <br>
+					Logon date: <span id="date"></span> <br>
+				</div>
 
-			<br>
+				<br>
 
-			<input type="text" id="searchterm" placeholder="Search for something!"><br>
+				<input type="text" id="searchterm" placeholder="Search for something!"><br>
 
-			<br>
+				<br>
 
-			<div class="search-opts">
-				<button onclick="ddg()"> DuckDuckGo </button>
-				<button onclick="eco()"> Ecosia </button>
-				<button onclick="ggl()"> Google </button>
-				<button onclick="srx()"> SearX </button>
-			</div>
+				<div class="search-opts">
+					<button onclick="ddg()"> DuckDuckGo </button>
+					<button onclick="eco()"> Ecosia </button>
+					<button onclick="ggl()"> Google </button>
+					<button onclick="srx()"> SearX </button>
+				</div>
 
-			<br>
+				<br>
 
-			<div class="href-container">
-				<table>
-					<tr>
-						<td>
-							4Chan: <br>
-							<a href="https://boards.4channel.org/g/">/g/ - Technology</a><br>
-							<a href="https://boards.4channel.org/mu/">/mu/ - Music</a><br>
-							<a href="https://boards.4chan.org/wg/">/wg/ - Wallpapers/General</a><br>
-							<a href="https://boards.4chan.org/ck/">/ck/ - Food & Cooking</a><br>
-						</td>
-						<td>
-							Reddit: <br>
-							<a href="https://www.reddit.com/r/bonehurtingjuice/">r/bonehurtingjuice</a><br>
-							<a href="https://www.reddit.com/r/godot/">r/godot</a><br>
-							<a href="https://www.reddit.com/r/vim/">r/vim</a><br>
-							<a href="https://www.reddit.com/user/bratpeki">Profile</a><br>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Social: <br>
-							<a href="https://discord.com/app">Discord</a><br>
-							<a href="https://www.instagram.com/">Instagram</a><br>
-							<a href="https://www.linkedin.com/">LinkedIn</a><br>
-							<a href="https://www.youtube.com/">YouTube</a><br>
-						</td>
-						<td>
-							Coding: <br>
-							<a href="https://github.com/">GitHub</a><br>
-							<a href="https://stackoverflow.com/">StackOverflow</a><br>
-							<a href="https://www.w3schools.com/">W3Schools</a><br>
-							<a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>
-						</td>
-					</tr>
-				</table>
-			</div>
+				<div class="href-container">
+					<table>
+						<tr>
+							<td>
+								4Chan: <br>
+								<a href="https://boards.4channel.org/g/">/g/ - Technology</a><br>
+								<a href="https://boards.4channel.org/mu/">/mu/ - Music</a><br>
+								<a href="https://boards.4chan.org/wg/">/wg/ - Wallpapers/General</a><br>
+								<a href="https://boards.4chan.org/ck/">/ck/ - Food & Cooking</a><br>
+							</td>
+							<td>
+								Reddit: <br>
+								<a href="https://www.reddit.com/r/bonehurtingjuice/">r/bonehurtingjuice</a><br>
+								<a href="https://www.reddit.com/r/godot/">r/godot</a><br>
+								<a href="https://www.reddit.com/r/vim/">r/vim</a><br>
+								<a href="https://www.reddit.com/user/bratpeki">Profile</a><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Social: <br>
+								<a href="https://discord.com/app">Discord</a><br>
+								<a href="https://www.instagram.com/">Instagram</a><br>
+								<a href="https://www.linkedin.com/">LinkedIn</a><br>
+								<a href="https://www.youtube.com/">YouTube</a><br>
+							</td>
+							<td>
+								Coding: <br>
+								<a href="https://github.com/">GitHub</a><br>
+								<a href="https://stackoverflow.com/">StackOverflow</a><br>
+								<a href="https://www.w3schools.com/">W3Schools</a><br>
+								<a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>
+							</td>
+						</tr>
+					</table>
+				</div>
 
-		</center></div>
+			</center>
+		</div>
 
 	</body>
 

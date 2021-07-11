@@ -1,0 +1,170 @@
+
+<!--
+	Author: Petar Katić (https://github.com/bratpeki)
+	Description: Startpage inspired by Evening-Startpage by TB-96 (https://github.com/TB-96/Evening-Startpage)
+	Name: Evening Lite
+-->
+
+<!DOCTYPE html>
+<html lang="en_US">
+
+	<style>
+
+		* {
+			color: #d8dee8;
+			font-family: monospace; font-size: 16px;
+			margin: 0; padding: 0;
+		}
+
+		a { color: #407ab7; }
+		body { background: #2e343f; }
+		div, input { background: #262a32; border: 1px solid #8997b4; display: table-cell; padding: 16px; vertical-align: middle; }
+
+		button {
+			background: #334257;
+			border: none;
+			height: 40px;
+			outline: none;
+			padding: 6px;
+			transition-duration: 300ms;
+			width: 160px;
+		}
+
+		button:hover {
+			background: #223146;
+		}
+
+		table {
+			border-collapse:separate;
+			border-spacing: 16px;
+			width: 100%;
+		}
+
+		td { text-align: left; vertical-align: top; width: 25%; }
+		tr { height: 50%; }
+
+		input {
+			border-style: none;
+			height: 22px;
+			outline: none;
+			width: 670px;
+		}
+
+		div.master {
+			background: none;
+			border: none;
+			height: 576px;
+			left: 50%;
+			margin: -296px 0 0 -360px;
+			position: absolute;
+			top: 50%;
+			width: 704px;
+		}
+
+		div.quote-container {
+			display: table-cell;
+			height: 64px;
+			text-align: center;
+			vertical-align: middle;
+			width: 684px;
+		}
+
+		div.search-opts { height: 40px; width: 684px; }
+		div.href-container { height: 240px; width: 684px; }
+
+		p#quote { font-size: 18px; }
+
+	</style>
+
+	<head>
+		<meta charset="utf-8">
+		<title> Startpage - Evening Lite </title>
+	</head>
+
+	<body>
+
+		<div class="master"> <center>
+
+			<div class="quote-container">
+				<em><b><p id="quote"></p></b></em>
+				<br>
+				<em><p id="author"></p></em>
+			</div>
+
+			<br>
+
+			<div style="padding: 0px;">
+				<input type="text" id="searchterm" placeholder="Search for something!"><br>
+			</div>
+
+			<br>
+
+			<div class="search-opts">
+				<button onclick="ddg()"> DuckDuckGo </button>
+				<button onclick="eco()"> Ecosia </button>
+				<button onclick="ggl()"> Google </button>
+				<button onclick="srx()"> SearX </button>
+			</div>
+
+			<br>
+
+			<div class="href-container">
+				<table>
+					<tr>
+						<td>
+							4Chan: <br>
+							<a href="https://boards.4channel.org/g/">/g/ - Technology</a><br>
+							<a href="https://boards.4channel.org/mu/">/mu/ - Music</a><br>
+							<a href="https://boards.4chan.org/wg/">/wg/ - Wallpapers/General</a><br>
+							<a href="https://boards.4chan.org/ck/">/ck/ - Food & Cooking</a><br>
+						</td>
+						<td>
+							Reddit: <br>
+							<a href="https://www.reddit.com/r/bonehurtingjuice/">r/bonehurtingjuice</a><br>
+							<a href="https://www.reddit.com/r/godot/">r/godot</a><br>
+							<a href="https://www.reddit.com/r/vim/">r/vim</a><br>
+							<a href="https://www.reddit.com/user/bratpeki">Profile</a><br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Social: <br>
+							<a href="https://discord.com/app">Discord</a><br>
+							<a href="https://www.instagram.com/">Instagram</a><br>
+							<a href="https://www.linkedin.com/">LinkedIn</a><br>
+							<a href="https://www.youtube.com/">YouTube</a><br>
+						</td>
+						<td>
+							Coding: <br>
+							<a href="https://github.com/">GitHub</a><br>
+							<a href="https://stackoverflow.com/">StackOverflow</a><br>
+							<a href="https://www.w3schools.com/">W3Schools</a><br>
+							<a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+		</center></div>
+	</body>
+
+	<script type="text/javascript">
+
+		document.getElementById("quote").textContent = "\"People say I should accept the world. Bullshit! I don't accept the world.\"";
+		document.getElementById("author").textContent = "Richard Stallman";
+
+		function searchUp( baseLink, searchLink ) {
+			var el = document.getElementById("searchterm").value;
+			if (el.length == 0) { window.location = baseLink; }
+			else { window.location = searchLink + el; }
+		}
+
+		function ddg() { searchUp( "https://duckduckgo.com/", "https://duckduckgo.com/?q=" ); }
+		function eco() { searchUp( "https://www.ecosia.org/", "https://www.ecosia.org/search?q=" ); }
+		function ggl() { searchUp( "https://www.google.com/", "https://www.google.com/search?q=" ); }
+		function srx() { searchUp( "https://searx.be/", "https://searx.be/?q=" ); }
+
+	</script>
+
+</html>
+

@@ -13,3 +13,9 @@ Based off of [my custom Vim colorscheme](https://github.com/bratpeki/truedark-vi
 
 ![truedark](./images/truedark.png)
 
+### Evening Lite
+
+Based off of [TB-96's Evening-Startpage](https://github.com/TB-96/Evening-Startpage).
+
+![truedark](./images/eveningLite.png)
+
